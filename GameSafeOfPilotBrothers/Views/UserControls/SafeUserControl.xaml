@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="GameSafeOfPilotBrothers.Views.UserControls.SafeUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GameSafeOfPilotBrothers.Views.UserControls"
+             xmlns:viewModels="clr-namespace:GameSafeOfPilotBrothers.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewModels:SafeViewModel></viewModels:SafeViewModel>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid>
+            <Label Width="200" Content="SafeViewModel" Height="100"></Label>
+        </Grid>
+    </Grid>
+</UserControl>
