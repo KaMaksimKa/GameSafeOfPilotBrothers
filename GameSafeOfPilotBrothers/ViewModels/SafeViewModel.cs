@@ -65,6 +65,20 @@ namespace GameSafeOfPilotBrothers.ViewModels
         }
 
         #endregion
+        #region Команда CreateNewSafe 
+        public ICommand CreateNewSafe { get; }
+
+        private bool CanCreateNewSafeExecute(object p) => true;
+
+        private void OnCreateNewSafeExecuted(object p)
+        {
+            Safe = new Safe(_settings.NumberHandlesInRow);
+            Safe.LockChanged += LockOfSafeChanged;
+            HandleLock = Safe.HandleLock;
+            LockOfSafeCondition = Safe.LockCondition;
+        }
+
+        #endregion
 
         #endregion
         public SafeViewModel()
@@ -75,6 +89,7 @@ namespace GameSafeOfPilotBrothers.ViewModels
             HandleLock = Safe.HandleLock;
             LockOfSafeCondition = Safe.LockCondition;
             TurnHandleCommand = new LambdaCommand(OnTurnHandleCommandExecuted, CanTurnHandleCommandExecute);
+            CreateNewSafe = new LambdaCommand(OnCreateNewSafeExecuted, CanCreateNewSafeExecute);
         }
 
         private void LockOfSafeChanged(object? safe, EventArgs args)

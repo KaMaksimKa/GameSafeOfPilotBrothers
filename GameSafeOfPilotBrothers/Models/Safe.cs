@@ -75,10 +75,14 @@ namespace GameSafeOfPilotBrothers.Models
                 handleLock[i] = Enumerable.Range(0, numberHandlesInRow).Select(a => startPosition).ToArray();
             }
             Safe safe = new Safe(handleLock);
-            for (int i = 0; i < countTurn; i++)
+            while (safe.LockCondition==LockConditionEnum.Open)
             {
-                safe.TurnHandle(new PositionInLock(random.Next(numberHandlesInRow), random.Next(numberHandlesInRow)));
+                for (int i = 0; i < countTurn; i++)
+                {
+                    safe.TurnHandle(new PositionInLock(random.Next(numberHandlesInRow), random.Next(numberHandlesInRow)));
+                }
             }
+            
 
             return safe.HandleLock;
         }

@@ -22,8 +22,8 @@
     </Window.Resources>
     <DockPanel>
         <StackPanel Background="#95e6e7" Width="175" DockPanel.Dock="Left">
-            <Button Content="Сейф" FontSize="20" Height="35" Margin="10 80 10 0" Command="{Binding Path=SelectSafeCommand}"></Button>
-            <Button Content="Настройки" FontSize="20" Height="35" Margin="10 10 10 0" Command="{Binding Path=SelectSettingsCommand}"></Button>
+            <Button Background="#01a4b9" Content="Сейф" FontSize="20" Height="35" Margin="10 80 10 0" Command="{Binding Path=SelectSafeCommand}"></Button>
+            <Button Background="#01a4b9" Content="Настройки" FontSize="20" Height="35" Margin="10 10 10 0" Command="{Binding Path=SelectSettingsCommand}"></Button>
         </StackPanel>
         <ContentControl x:Name="Pages" DockPanel.Dock="Right" Content="{Binding SelectedViewModel}"/>
     </DockPanel>

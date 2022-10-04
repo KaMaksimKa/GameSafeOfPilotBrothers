@@ -39,7 +39,7 @@ namespace GameSafeOfPilotBrothers.ViewModels
         #endregion
         #region Команды
 
-        #region Команда SelectSettingsCommand 
+        #region Команда ChangeNumberHandlesInRowCommand 
         public ICommand ChangeNumberHandlesInRowCommand { get; }
 
         private bool CanChangeNumberHandlesInRowCommandExecute(object p) => int.TryParse(NumberHandlesInRow, out int result) && result > 0;
@@ -47,6 +47,7 @@ namespace GameSafeOfPilotBrothers.ViewModels
         private void OnChangeNumberHandlesInRowCommandExecuted(object p)
         {
             Settings.NumberHandlesInRow = int.Parse(NumberHandlesInRow);
+            Settings.SaveChanges();
         }
 
         #endregion

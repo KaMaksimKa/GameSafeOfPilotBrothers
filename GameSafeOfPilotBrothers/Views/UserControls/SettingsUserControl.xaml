@@ -18,6 +18,6 @@
             <TextBox  Margin="30 20 30 0" FontSize="25" Width="40" Text="{Binding Path=NumberHandlesInRow, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
 
-        <Button Width="200" Margin="30" Height="35" Content="Сохранить" FontSize="20" Command="{Binding Path=ChangeNumberHandlesInRowCommand}"></Button>
+        <Button Background="#008dd8" Width="200" Margin="30" Height="35" Content="Сохранить" FontSize="20" Command="{Binding Path=ChangeNumberHandlesInRowCommand}"></Button>
     </StackPanel>
 </UserControl>

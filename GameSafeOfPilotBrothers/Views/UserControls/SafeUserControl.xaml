@@ -13,17 +13,21 @@
             <Style.Setters>
                 <Setter Property="Height" Value="70"></Setter>
                 <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
-                <Setter Property="FontSize" Value="40"></Setter>
-                <Setter Property="Margin" Value="40 10 40 5"></Setter>
+                <Setter Property="FontSize" Value="25"></Setter>
+                <Setter Property="Margin" Value="0 30 0 0"></Setter>
+                <Setter Property="FontFamily" Value="Comic Sans MS" />
             </Style.Setters>
             <Style.Triggers>
                 <DataTrigger Binding="{Binding  Path=LockOfSafeCondition}"
                              Value="Close">
-                    <Setter Property="Foreground" Value="Red" />
+                    <Setter Property="Foreground" Value="#bc1717" />
+                    <Setter Property="Content" Value="Заблокировано" />
+                    
                 </DataTrigger>
                 <DataTrigger Binding="{Binding  Path=LockOfSafeCondition}"
                              Value="Open">
-                    <Setter Property="Foreground" Value="Green" />
+                    <Setter Property="Foreground" Value="#1bb71b" />
+                    <Setter Property="Content" Value="Разблокировано" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -49,7 +53,8 @@
         <StackPanel Orientation="Horizontal" Background="#50c6ee">
             <local:LockUserControl Width="450" Height="450" Margin="25 0 25 25" TurnHandleCommand="{Binding Path=TurnHandleCommand}"  HandleLock="{Binding Path=HandleLock}"></local:LockUserControl>
             <StackPanel>
-                <Label Style="{StaticResource LockConditions}" Content="{Binding Path=LockOfSafeCondition}"></Label>
+                <Button Background="#008dd8" FontSize="18" Height="35" Content="Начать с начала" FontFamily="Comic Sans MS" Margin="10 30 10 0" Command="{Binding Path=CreateNewSafe}"></Button>
+                <Label Style="{StaticResource LockConditions}"></Label>
                 <Image Style="{StaticResource LockConditionsImage }" Height="300" Width="200" ></Image>
             </StackPanel>
         </StackPanel>
