@@ -3,16 +3,57 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mD="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:GameSafeOfPilotBrothers.Views.UserControls"
              xmlns:viewModels="clr-namespace:GameSafeOfPilotBrothers.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="725">
+    <UserControl.Resources>
+        <Style TargetType="Label" x:Key="LockConditions">
+            <Style.Setters>
+                <Setter Property="Height" Value="70"></Setter>
+                <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                <Setter Property="FontSize" Value="40"></Setter>
+                <Setter Property="Margin" Value="40 10 40 5"></Setter>
+            </Style.Setters>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding  Path=LockOfSafeCondition}"
+                             Value="Close">
+                    <Setter Property="Foreground" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding  Path=LockOfSafeCondition}"
+                             Value="Open">
+                    <Setter Property="Foreground" Value="Green" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Image" x:Key="LockConditionsImage">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding  Path=LockOfSafeCondition}"
+                             Value="Close">
+                    <Setter Property="Source" Value="../../Data/Img/CloseLockOfSafe.png" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding  Path=LockOfSafeCondition}"
+                             Value="Open">
+                    <Setter Property="Source" Value="../../Data/Img/OpenLockOfSafe.png" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
     <UserControl.DataContext>
         <viewModels:SafeViewModel></viewModels:SafeViewModel>
     </UserControl.DataContext>
-    <Grid>
-        <Grid>
-            <Label Width="200" Content="SafeViewModel" Height="100"></Label>
-        </Grid>
-    </Grid>
+    <DockPanel>
+        <Label DockPanel.Dock="Top" FontSize="35" Background="#1e69f5" Content="Сейф братьев пилотов" FontFamily="Comic Sans MS" FontWeight="Heavy"
+               Foreground="AliceBlue" HorizontalContentAlignment="Center"></Label>
+        <StackPanel Orientation="Horizontal" Background="#50c6ee">
+            <local:LockUserControl Width="450" Height="450" Margin="25 0 25 25" TurnHandleCommand="{Binding Path=TurnHandleCommand}"  HandleLock="{Binding Path=HandleLock}"></local:LockUserControl>
+            <StackPanel>
+                <Label Style="{StaticResource LockConditions}" Content="{Binding Path=LockOfSafeCondition}"></Label>
+                <Image Style="{StaticResource LockConditionsImage }" Height="300" Width="200" ></Image>
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+
+
 </UserControl>

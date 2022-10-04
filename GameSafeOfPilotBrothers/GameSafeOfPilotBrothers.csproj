@@ -8,7 +8,29 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
+    <None Remove="Data\Img\CloseLockOfSafe.png" />
+    <None Remove="Data\Img\HandleTurnOff.png" />
+    <None Remove="Data\Img\HandleTurnOffNew.png" />
+    <None Remove="Data\Img\HandleTurnOn.png" />
+    <None Remove="Data\Img\HandleTurnOnNew.png" />
+    <None Remove="Data\Img\OpenLockOfSafe.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GameSafeOfPilotBrothers.Tests\GameSafeOfPilotBrothers.Tests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Data\Img\CloseLockOfSafe.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Data\Img\OpenLockOfSafe.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameSafeOfPilotBrothers.Views"
         xmlns:viewModels="clr-namespace:GameSafeOfPilotBrothers.ViewModels"
+        xmlns:mD="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:userControls="clr-namespace:GameSafeOfPilotBrothers.Views.UserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="900" ResizeMode="NoResize">
     <Window.DataContext>
         <viewModels:NavigationViewModel></viewModels:NavigationViewModel>
     </Window.DataContext>
@@ -20,9 +21,9 @@
         </DataTemplate>
     </Window.Resources>
     <DockPanel>
-        <StackPanel Width="200" DockPanel.Dock="Left">
-            <Button Content="Сейф" FontSize="20" Height="30" Margin="20 20 20 0" Command="{Binding Path=SelectSafeCommand}"></Button>
-            <Button Content="Настройки" FontSize="20" Height="30" Margin="20 20 20 0" Command="{Binding Path=SelectSettingsCommand}"></Button>
+        <StackPanel Background="#95e6e7" Width="175" DockPanel.Dock="Left">
+            <Button Content="Сейф" FontSize="20" Height="35" Margin="10 80 10 0" Command="{Binding Path=SelectSafeCommand}"></Button>
+            <Button Content="Настройки" FontSize="20" Height="35" Margin="10 10 10 0" Command="{Binding Path=SelectSettingsCommand}"></Button>
         </StackPanel>
         <ContentControl x:Name="Pages" DockPanel.Dock="Right" Content="{Binding SelectedViewModel}"/>
     </DockPanel>

@@ -10,12 +10,14 @@
     <UserControl.DataContext>
         <viewModels:SettingsViewModel></viewModels:SettingsViewModel>
     </UserControl.DataContext>
-    <StackPanel>
+    <StackPanel Background="#50c6ee">
+        <Label FontSize="35" Background="#1e69f5" Content="Настройки" FontFamily="Comic Sans MS" FontWeight="Heavy"
+               Foreground="AliceBlue" HorizontalContentAlignment="Center"></Label>
         <StackPanel Orientation="Horizontal">
-            <Label Margin="30 20 30 0" Content=" Количество рукояток в ряду" FontSize="20"></Label>
-            <TextBox  Margin="30 20 30 0" FontSize="20" Width="70" Text="{Binding Path=NumberHandlesInRow, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Label Margin="30 20 30 0" Content=" Количество рукояток в ряду:" FontSize="25"></Label>
+            <TextBox  Margin="30 20 30 0" FontSize="25" Width="40" Text="{Binding Path=NumberHandlesInRow, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
 
-        <Button Margin="50 30 50 0" Content="Сохранить" FontSize="20" Command="{Binding Path=ChangeNumberHandlesInRowCommand}"></Button>
+        <Button Width="200" Margin="30" Height="35" Content="Сохранить" FontSize="20" Command="{Binding Path=ChangeNumberHandlesInRowCommand}"></Button>
     </StackPanel>
 </UserControl>

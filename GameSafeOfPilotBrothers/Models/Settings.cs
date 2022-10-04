@@ -24,7 +24,7 @@ namespace GameSafeOfPilotBrothers.Models
             return _settings;
         }
 
-        public int NumberHandlesInRow { get; set; } = 10;
+        public int NumberHandlesInRow { get; set; } = 4;
         public void SaveChanges()
         {
 
