@@ -8,7 +8,9 @@
         xmlns:mD="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:userControls="clr-namespace:GameSafeOfPilotBrothers.Views.UserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="900" ResizeMode="NoResize">
+        Title='Игра "Сейф братьев пилотов"'  Height="600" Width="900" ResizeMode="NoResize"
+        Icon="../Data/Img/AppsIcon.png"
+        >
     <Window.DataContext>
         <viewModels:NavigationViewModel></viewModels:NavigationViewModel>
     </Window.DataContext>

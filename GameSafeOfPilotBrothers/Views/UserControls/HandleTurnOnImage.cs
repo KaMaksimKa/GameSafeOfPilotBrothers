@@ -12,7 +12,7 @@ namespace GameSafeOfPilotBrothers.Views.UserControls
     {
         public HandleTurnOnImage()
         {
-            Source = new ImageSourceConverter().ConvertFrom("../../../Data/Img/HandleTurnOn3.png") as ImageSource;
+            Source = new ImageSourceConverter().ConvertFrom("../../../Data/Img/HandleTurnOn.png") as ImageSource;
         }
     }
 }

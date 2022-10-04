@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\Img\AppsIcon.png" />
     <None Remove="Data\Img\CloseLockOfSafe.png" />
     <None Remove="Data\Img\HandleTurnOff.png" />
     <None Remove="Data\Img\HandleTurnOffNew.png" />
@@ -26,6 +27,15 @@
 
   <ItemGroup>
     <Resource Include="Data\Img\CloseLockOfSafe.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Data\Img\HandleTurnOff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Data\Img\HandleTurnOn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Data\Img\AppsIcon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Data\Img\OpenLockOfSafe.png">
