@@ -5,9 +5,11 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Data\Img\AppsIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\Img\AppsIcon.ico" />
     <None Remove="Data\Img\AppsIcon.png" />
     <None Remove="Data\Img\CloseLockOfSafe.png" />
     <None Remove="Data\Img\HandleTurnOff.png" />
@@ -26,6 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Data\Img\AppsIcon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Data\Img\CloseLockOfSafe.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -36,7 +41,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Data\Img\AppsIcon.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Data\Img\OpenLockOfSafe.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

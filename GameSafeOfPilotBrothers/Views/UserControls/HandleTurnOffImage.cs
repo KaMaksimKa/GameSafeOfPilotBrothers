@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace GameSafeOfPilotBrothers.Views.UserControls
 {
@@ -11,7 +12,7 @@ namespace GameSafeOfPilotBrothers.Views.UserControls
     {
         public HandleTurnOffImage()
         {
-            Source = new ImageSourceConverter().ConvertFrom("../../../Data/Img/HandleTurnOff.png") as ImageSource;
+            Source = new BitmapImage(new Uri("../../Data/Img/HandleTurnOff.png", UriKind.Relative));
         }
     }
 }

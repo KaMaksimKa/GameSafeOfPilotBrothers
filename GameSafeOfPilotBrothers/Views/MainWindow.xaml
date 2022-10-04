@@ -9,7 +9,7 @@
         xmlns:userControls="clr-namespace:GameSafeOfPilotBrothers.Views.UserControls"
         mc:Ignorable="d"
         Title='Игра "Сейф братьев пилотов"'  Height="600" Width="900" ResizeMode="NoResize"
-        Icon="../Data/Img/AppsIcon.png"
+        Icon="../Data/Img/AppsIcon.ico"
         >
     <Window.DataContext>
         <viewModels:NavigationViewModel></viewModels:NavigationViewModel>
