@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -19,33 +20,33 @@ namespace GameSafeOfPilotBrothers.Views.UserControls
     /// <summary>
     /// Логика взаимодействия для LockUserControl.xaml
     /// </summary>
-    public partial class LockUserControl : UserControl
+    public partial class LockUserControl:UserControl
     {
         #region Свойство HandleLock
 
-        public bool[][] HandleLock
+        public bool[,] HandleLock
         {
-            get => (bool[][])GetValue(HandleLockProperty);
+            get => (bool[,])GetValue(HandleLockProperty);
             set => SetValue(HandleLockProperty, value);
         }
 
         public static readonly DependencyProperty HandleLockProperty =
-            DependencyProperty.Register("HandleLock", typeof(bool[][]),
+            DependencyProperty.Register("HandleLock", typeof(bool[,]),
                 typeof(LockUserControl), new PropertyMetadata(SetHandleLock));
 
         private static void SetHandleLock(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             LockUserControl control = (LockUserControl)d;
-            var handleLock = (bool[][]) e.NewValue;
-            control.Lock.Columns = handleLock.Length;
-            control.Lock.Rows = handleLock.Length;
+            var handleLock = (bool[,]) e.NewValue;
+            control.Lock.Columns = handleLock.GetLength(0);
+            control.Lock.Rows = handleLock.GetLength(1);
             control.Lock.Children.Clear();
-            for (int i = 0; i < handleLock.Length; i++)
+            for (int i = 0; i < handleLock.GetLength(0); i++)
             {
-                for (int j = 0; j < handleLock.Length; j++)
+                for (int j = 0; j < handleLock.GetLength(1); j++)
                 {
                     HandleImage handle;
-                    if (handleLock[i][j])
+                    if (handleLock[i,j])
                     {
                          handle = new HandleTurnOnImage() { PositionInLock = new PositionInLock(i, j) };
                     }
@@ -58,8 +59,10 @@ namespace GameSafeOfPilotBrothers.Views.UserControls
                 }
             }
             
-
         }
+
+        
+        #endregion
 
         private void HandleOnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -69,10 +72,6 @@ namespace GameSafeOfPilotBrothers.Views.UserControls
                 TurnHandleCommand?.Execute(handleImage.PositionInLock);
             }
         }
-
-        #endregion
-
-
 
         #region Свойство TurnHandleCommand
 

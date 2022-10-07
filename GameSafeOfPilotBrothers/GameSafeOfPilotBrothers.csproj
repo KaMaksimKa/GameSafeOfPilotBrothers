@@ -11,26 +11,26 @@
   <ItemGroup>
     <None Remove="Data\Img\AppsIcon.ico" />
     <None Remove="Data\Img\AppsIcon.png" />
+    <None Remove="Data\Img\BackGroundLock.png" />
     <None Remove="Data\Img\CloseLockOfSafe.png" />
     <None Remove="Data\Img\HandleTurnOff.png" />
     <None Remove="Data\Img\HandleTurnOffNew.png" />
     <None Remove="Data\Img\HandleTurnOn.png" />
     <None Remove="Data\Img\HandleTurnOnNew.png" />
     <None Remove="Data\Img\OpenLockOfSafe.png" />
+    <None Remove="Data\Img\rect1670.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\GameSafeOfPilotBrothers.Tests\GameSafeOfPilotBrothers.Tests.csproj" />
+    <PackageReference Include="SharpVectors" Version="1.8.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Data\Img\AppsIcon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Data\Img\BackGroundLock.png" />
     <Resource Include="Data\Img\CloseLockOfSafe.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -39,9 +39,6 @@
     </Resource>
     <Resource Include="Data\Img\HandleTurnOn.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Data\Img\AppsIcon.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Data\Img\OpenLockOfSafe.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

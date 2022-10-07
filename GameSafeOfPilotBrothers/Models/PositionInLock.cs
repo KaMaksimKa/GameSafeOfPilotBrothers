@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameSafeOfPilotBrothers.Models
 {
-    internal struct PositionInLock
+    public struct PositionInLock
     {
         public int X;
         public int Y;

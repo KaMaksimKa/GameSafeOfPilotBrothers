@@ -60,7 +60,7 @@ namespace GameSafeOfPilotBrothers.ViewModels
         {
             SelectSettingsCommand = new LambdaCommand(OnSelectSettingsCommandExecuted, CanSelectSettingsCommandExecute);
             SelectSafeCommand = new LambdaCommand(OnSelectSafeCommandExecuted, CanSelectSafeCommandExecute);
-            SelectedViewModel = new SettingsViewModel();
+            SelectedViewModel = new SafeViewModel();
         }
     }
 }

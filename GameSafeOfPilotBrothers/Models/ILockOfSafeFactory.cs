@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace GameSafeOfPilotBrothers.Models
 {
-    public enum LockConditionEnum
+    public interface ILockOfSafeFactory
     {
-        Open,
-        Close
+        public bool[,] GetLockOfSafe();
     }
 }

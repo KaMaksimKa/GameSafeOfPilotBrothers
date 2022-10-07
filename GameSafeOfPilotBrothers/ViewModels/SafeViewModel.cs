@@ -1,10 +1,6 @@
 ﻿using GameSafeOfPilotBrothers.Models;
 using GameSafeOfPilotBrothers.ViewModels.Base;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using GameSafeOfPilotBrothers.Infrastructure.Commands;
 
@@ -18,8 +14,8 @@ namespace GameSafeOfPilotBrothers.ViewModels
         #region Свойства
 
         #region HandleLock
-
-        public bool[][] HandleLock
+        private bool[,] _handleLock = null!;
+        public bool[,] HandleLock
         {
             get { return _handleLock; }
             set => Set(ref _handleLock, value);
@@ -41,7 +37,7 @@ namespace GameSafeOfPilotBrothers.ViewModels
         #endregion
 
         #endregion
-        private bool[][] _handleLock;
+        
 
         #region Команды
 
@@ -72,8 +68,9 @@ namespace GameSafeOfPilotBrothers.ViewModels
 
         private void OnCreateNewSafeExecuted(object p)
         {
-            Safe = new Safe(_settings.NumberHandlesInRow);
+            Safe = new Safe(new RandomLockOfSafeFactory(_settings.NumberHandlesInRow));
             Safe.LockChanged += LockOfSafeChanged;
+
             HandleLock = Safe.HandleLock;
             LockOfSafeCondition = Safe.LockCondition;
         }
@@ -84,10 +81,13 @@ namespace GameSafeOfPilotBrothers.ViewModels
         public SafeViewModel()
         {
             _settings = Settings.GetSettings();
-            Safe = new Safe(_settings.NumberHandlesInRow);
+
+            Safe = new Safe(new RandomLockOfSafeFactory(_settings.NumberHandlesInRow));
             Safe.LockChanged += LockOfSafeChanged;
+
             HandleLock = Safe.HandleLock;
             LockOfSafeCondition = Safe.LockCondition;
+
             TurnHandleCommand = new LambdaCommand(OnTurnHandleCommandExecuted, CanTurnHandleCommandExecute);
             CreateNewSafe = new LambdaCommand(OnCreateNewSafeExecuted, CanCreateNewSafeExecute);
         }

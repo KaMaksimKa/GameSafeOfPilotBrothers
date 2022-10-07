@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameSafeOfPilotBrothers", "GameSafeOfPilotBrothers\GameSafeOfPilotBrothers.csproj", "{8F16EE00-8117-4071-BAE0-CDA5FAFEA69B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameSafeOfPilotBrothers.Tests", "GameSafeOfPilotBrothers.Tests\GameSafeOfPilotBrothers.Tests.csproj", "{B21BE891-D072-41DD-A719-C6E4C7164CAE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameSafeOfPilotBrothers.Tests", "GameSafeOfPilotBrothers.Tests\GameSafeOfPilotBrothers.Tests.csproj", "{7006335B-D80E-4DBD-AABD-D2E38451E05C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{8F16EE00-8117-4071-BAE0-CDA5FAFEA69B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F16EE00-8117-4071-BAE0-CDA5FAFEA69B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F16EE00-8117-4071-BAE0-CDA5FAFEA69B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B21BE891-D072-41DD-A719-C6E4C7164CAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B21BE891-D072-41DD-A719-C6E4C7164CAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B21BE891-D072-41DD-A719-C6E4C7164CAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B21BE891-D072-41DD-A719-C6E4C7164CAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7006335B-D80E-4DBD-AABD-D2E38451E05C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7006335B-D80E-4DBD-AABD-D2E38451E05C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7006335B-D80E-4DBD-AABD-D2E38451E05C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7006335B-D80E-4DBD-AABD-D2E38451E05C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
