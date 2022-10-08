@@ -7,9 +7,6 @@
              xmlns:viewModels="clr-namespace:GameSafeOfPilotBrothers.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
-        <viewModels:SettingsViewModel></viewModels:SettingsViewModel>
-    </UserControl.DataContext>
     <StackPanel Background="#50c6ee">
         <Label FontSize="35" Background="#1e69f5" Content="Настройки" FontFamily="Comic Sans MS" FontWeight="Heavy"
                Foreground="AliceBlue" HorizontalContentAlignment="Center"></Label>

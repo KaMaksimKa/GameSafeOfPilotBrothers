@@ -8,6 +8,7 @@
              xmlns:viewModels="clr-namespace:GameSafeOfPilotBrothers.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="725">
+    
     <UserControl.Resources>
         <Style TargetType="Label" x:Key="LockConditions">
             <Style.Setters>
@@ -44,9 +45,7 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-    <UserControl.DataContext>
-        <viewModels:SafeViewModel></viewModels:SafeViewModel>
-    </UserControl.DataContext>
+    
     <DockPanel>
         <Label DockPanel.Dock="Top" FontSize="35" Background="#1e69f5" Content="Сейф братьев пилотов" FontFamily="Comic Sans MS" FontWeight="Heavy"
                Foreground="AliceBlue" HorizontalContentAlignment="Center"></Label>

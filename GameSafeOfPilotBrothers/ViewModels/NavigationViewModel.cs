@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using GameSafeOfPilotBrothers.Infrastructure.Commands;
+using GameSafeOfPilotBrothers.Models;
 using GameSafeOfPilotBrothers.ViewModels;
 
 namespace GameSafeOfPilotBrothers.ViewModels
@@ -49,7 +50,7 @@ namespace GameSafeOfPilotBrothers.ViewModels
 
         private void OnSelectSafeCommandExecuted(object p)
         {
-            SelectedViewModel = new SafeViewModel();
+            SelectedViewModel = new SafeViewModel(Settings.GetSettings());
         }
 
         #endregion
@@ -60,7 +61,8 @@ namespace GameSafeOfPilotBrothers.ViewModels
         {
             SelectSettingsCommand = new LambdaCommand(OnSelectSettingsCommandExecuted, CanSelectSettingsCommandExecute);
             SelectSafeCommand = new LambdaCommand(OnSelectSafeCommandExecuted, CanSelectSafeCommandExecute);
-            SelectedViewModel = new SafeViewModel();
+            
+            SelectedViewModel = new SafeViewModel(Settings.GetSettings());
         }
     }
 }

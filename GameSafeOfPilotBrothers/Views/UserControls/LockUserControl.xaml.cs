@@ -36,6 +36,10 @@ namespace GameSafeOfPilotBrothers.Views.UserControls
 
         private static void SetHandleLock(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
+            if (e.NewValue is null)
+            {
+                return;
+            }
             LockUserControl control = (LockUserControl)d;
             var handleLock = (bool[,]) e.NewValue;
             control.Lock.Columns = handleLock.GetLength(0);

@@ -17,7 +17,7 @@ namespace GameSafeOfPilotBrothers.ViewModels
         private bool[,] _handleLock = null!;
         public bool[,] HandleLock
         {
-            get { return _handleLock; }
+            get => _handleLock;
             set => Set(ref _handleLock, value);
         }
 
@@ -78,9 +78,9 @@ namespace GameSafeOfPilotBrothers.ViewModels
         #endregion
 
         #endregion
-        public SafeViewModel()
+        public SafeViewModel(ISettings settings)
         {
-            _settings = Settings.GetSettings();
+            _settings = settings;
 
             Safe = new Safe(new RandomLockOfSafeFactory(_settings.NumberHandlesInRow));
             Safe.LockChanged += LockOfSafeChanged;
